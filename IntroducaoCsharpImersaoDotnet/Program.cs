@@ -6,23 +6,28 @@ namespace introducao_csharp_imersao_dotnet
     {
         public static void Main(string[] args)
         {
-            var name = "Yan";
-            var age = 0;
+            var name = "Marie";
+            var age = 18;
 
-            var ofLegalAge = age > 18;
+            var ofLegalAge = age >= 18;
 
-            if (ofLegalAge)
+            try
             {
-                Console.WriteLine(name + "The person is of legal age.");
-            }
-            else if (age == 0) {
-                Console.WriteLine("Invalid Age");
-            }
-            else {
-                Console.WriteLine(name + "The person is not of legal age.");
-            }
+                if (age == 0)
+                    throw new Exception("Invalid Age");
 
-            Console.WriteLine("The" + name + "is" + age + "years old.");
+                if (ofLegalAge)
+                    Console.WriteLine(name + " is of legal age.");
+
+                else
+                    Console.WriteLine(name + " is not of legal age.");
+
+                Console.WriteLine(name + " is " + age + " years old.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error occurred in the system: " + e.Message);
+            }
 
             Console.ReadLine();
         }
