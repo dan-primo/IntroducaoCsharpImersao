@@ -6,7 +6,7 @@ namespace IntroducaoCsharpImersaoDotnet
     {
         public static void Main(string[] args)
         {
-            var name = "John";
+            // var name = "John";
             var age = 12;
             var ofLegalAge = age >= 18;
 
